@@ -22,3 +22,15 @@ set hlsearch
 set ruler
 set laststatus=2		"Displays the filename
 echo "Sourced!"
+
+" Close quotes and colons in INSERT mode
+" To escape it using ctrl + v before typing the mapped char like ( {
+
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
