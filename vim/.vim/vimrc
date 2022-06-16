@@ -14,8 +14,11 @@ set backspace=indent,eol,start	" Backspace eveything in insert mode
 set wildmenu			" Display matches in command-line mode
 set wildignore=**/node_modules/**,**/dist/**,*.pyc
 set hidden			" Change files without saving
-set path=.,**			" Relative to current file and everything under :pwd
+"set path=.,**			" Relative to current file and everything under :pwd
+set path+=**
 set noswapfile 			" Disables swapfiles
 set incsearch
-
+set hlsearch
+set ruler
+set laststatus=2		"Displays the filename
 echo "Sourced!"
