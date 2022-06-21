@@ -1,0 +1,11 @@
+#!/bin/sh 
+
+alias pi="ping 8.8.8.8"
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+alias repos="cd ~/Documents/repos"
+alias keys="cd ~/Documents/keys"
+alias docs="cd ~/Documents"
+alias docker="docker -H ssh://remot3@165.227.158.254:22"
+alias docker-compose="docker-compose -H ssh://remot3@165.227.158.254:22"
+
+alias testz="echo test new zshrc"
