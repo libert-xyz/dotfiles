@@ -1,9 +1,5 @@
 #!/bin/sh
 
-#parse_git_branch() {
-#     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-#}
-
 autoload -Uz vcs_info
 
 # enable only git 
@@ -29,9 +25,15 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
     fi
 }
 
+check_aws_profile() {
+	if [[ ! -z "$AWS_PROFILE" ]]; then
+	  echo -n "%F{magenta} <$AWS_PROFILE>%f"
+	fi
+}
+
 zstyle ':vcs_info:*' check-for-changes true
 # zstyle ':vcs_info:git:*' formats " %r/%S %b %m%u%c "
 #zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[magenta]% %b)"
 zstyle ':vcs_info:*' formats '%F{red}(%b)%f' # (main)
 
-PS1='%F{green} %~%f $vcs_info_msg_0_ > ' #  /tmp $
+PS1='%F{green} %~%f $vcs_info_msg_0_ $(check_aws_profile) > ' #  /tmp $

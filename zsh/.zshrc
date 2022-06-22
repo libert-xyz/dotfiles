@@ -25,6 +25,8 @@ zstyle ':completion:*' menu select
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# Required for web_search
+zmodload zsh/langinfo
 
 # Colors
 #autoload -Uz colors && colors
@@ -39,13 +41,15 @@ source "$ZDOTDIR/zsh-functions"
 zsh_add_file "zsh-exports"
 #zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-alias"
-#zsh_add_file "liberty.zsh-theme"
 zsh_add_file "zsh-prompt"
 
 ## Plugins ##
 
+zsh_add_file "plugins/zsh-dirhistory/dirhistory.plugin.zsh"
+zsh_add_file "plugins/zsh-websearch/web-search.plugin.zsh"
 #zsh_add_plugin "zsh-users/zsh-autosuggestions"
 #zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+#zsh_add_plugin "zsh-users/zsh-dirhistory"
 
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
