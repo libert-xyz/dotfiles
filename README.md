@@ -14,6 +14,13 @@ stow vim bash ctags
 
 For submodules, perform symlinks relative to where the submodule should be placed (i.e. in `vim/.vim/pack/plugins/start` run `ln -s ../../../../../submodules/submodule`). 
 
+### Adding submodules
+
+git submodule add https://github.com/preservim/nerdtree submodules/nerdtree
+
+### Update submodules
+
+git submodule update --remote
 
 
 
