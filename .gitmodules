@@ -1,3 +1,15 @@
 [submodule "submodules/nerdtree"]
 	path = submodules/nerdtree
 	url = https://github.com/preservim/nerdtree
+[submodule "submodules/vim-which-key"]
+	path = submodules/vim-which-key
+	url = https://github.com/liuchengxu/vim-which-key
+[submodule "submodules/dracula"]
+	path = submodules/dracula
+	url = https://github.com/dracula/vim
+[submodule "submodules/vim-airline"]
+	path = submodules/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "submodules/vim-airline-themes"]
+	path = submodules/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

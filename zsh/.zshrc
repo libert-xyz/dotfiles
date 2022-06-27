@@ -43,6 +43,10 @@ zsh_add_file "zsh-exports"
 zsh_add_file "zsh-alias"
 zsh_add_file "zsh-prompt"
 
+## Fuzzy Search ##
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 ## Plugins ##
 
 zsh_add_file "plugins/zsh-dirhistory/dirhistory.plugin.zsh"
