@@ -13,3 +13,9 @@
 [submodule "submodules/vim-airline-themes"]
 	path = submodules/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "submodules/vim-devicons"]
+	path = submodules/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule "submodules/fzf"]
+	path = submodules/fzf
+	url = https://github.com/junegunn/fzf.vim

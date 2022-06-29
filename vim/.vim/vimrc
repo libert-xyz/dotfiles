@@ -94,6 +94,8 @@ set encoding=utf-8
 """"""""""""""
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'junegunn/fzf.vim'
+set runtimepath+=/opt/homebrew/opt/fzf
+"set runtimepath+=~/dotfiles/submodules/fzf/plugin/fzf.vim
 """"""""""""""
 "Syntax Check"
 """"""""""""""
@@ -173,7 +175,7 @@ set noswapfile
 set autoindent
 set ic
 set incsearch
-set smartcase
+"set smartcase
 set lazyredraw
 " set noshowmatch
 set noerrorbells
@@ -191,6 +193,13 @@ filetype plugin indent on
 "set cursorline
 "set cursorcolumn
 "set hlsearch
+
+""vimRC 2021 ThePrimeagen
+
+set relativenumber
+set hidden
+"set scrolloff=8
+
 """""
 "RtL"
 """""
@@ -271,7 +280,6 @@ let g:syntastic_check_on_wq = 0
 "LEADER"
 "leader key is space
 let mapleader =" "
-map <leader>f :Goyo <Cr>
 map <leader>n :NERDTree <Cr>
 map <leader>v :Vi <Cr>
 map <leader>r :Ra <Cr>
@@ -333,11 +341,17 @@ map <leader>tm :tabmove<Cr>
 
 map <leader>c :Colors<Cr>
 map <leader>b :Buffers<Cr>
-map <leader>s :Files<Cr>
+map <leader>f :Files<Cr>
 map <leader>W :Windows<Cr>
 map <leader>H :History<Cr>
 map <leader>Hc :History:<Cr>
 map <leader>M :Maps<Cr>
+
+""""""""""""""""""""""""""
+""""""""FZF"""""""""""""""
+""""""""""""""""""""""""""
+
+let g:fzf_layout = { 'down': '40%' }
 
 """"""""""""""""""""""""""
 "Commands and filemanager"
@@ -389,75 +403,78 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 let g:NERDTreeWinSize=20
 
+"show dot files
+let NERDTreeShowHidden=1
+
 "disable 80 extentions of nerdtree for less lag
 
-let g:NERDTreeLimitedSyntax = 1
+"let g:NERDTreeLimitedSyntax = 1
 
 " Create default mappings
-let g:NERDCreateDefaultMappings = 1
+"let g:NERDCreateDefaultMappings = 1
 
 " Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
+"let g:NERDSpaceDelims = 1
 
 " Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
+"let g:NERDCompactSexyComs = 1
 
 " Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
+"let g:NERDDefaultAlign = 'left'
 
 " Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
+"let g:NERDAltDelims_java = 1
 
 " Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+"let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 
 " Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
+"let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
+"let g:NERDTrimTrailingWhitespace = 1
 
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
+"let g:NERDToggleCheckAllLines = 1
 
 """""""""""""""""""""""""""""""""
 " NERDTree Functions and colors "
 """""""""""""""""""""""""""""""""
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
-let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+"let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+"let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
 " you can add these colors to your .vimrc to help customizing
-let s:brown = "905532"
-let s:aqua =  "3AFFDB"
-let s:blue = "689FB6"
-let s:darkBlue = "44788E"
-let s:purple = "834F79"
-let s:lightPurple = "834F79"
-let s:red = "AE403F"
-let s:beige = "F5C06F"
-let s:yellow = "F09F17"
-let s:orange = "D4843E"
-let s:darkOrange = "F16529"
-let s:pink = "CB6F6F"
-let s:salmon = "EE6E73"
-let s:green = "8FAA54"
-let s:lightGreen = "31B53E"
-let s:white = "FFFFFF"
-let s:rspec_red = 'FE405F'
-let s:git_orange = 'F54D27'
+"let s:brown = "905532"
+"let s:aqua =  "3AFFDB"
+"let s:blue = "689FB6"
+"let s:darkBlue = "44788E"
+"let s:purple = "834F79"
+"let s:lightPurple = "834F79"
+"let s:red = "AE403F"
+"let s:beige = "F5C06F"
+"let s:yellow = "F09F17"
+"let s:orange = "D4843E"
+"let s:darkOrange = "F16529"
+"let s:pink = "CB6F6F"
+"let s:salmon = "EE6E73"
+"let s:green = "8FAA54"
+"let s:lightGreen = "31B53E"
+"let s:white = "FFFFFF"
+"let s:rspec_red = 'FE405F'
+"let s:git_orange = 'F54D27'
 
-let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
+"let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+"let g:NERDTreeExtensionHighlightColor['css'] = s:blue " sets the color of css files to blue
 
-let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+"let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+"let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
 
-let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
+"let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+"let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
 
-let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
-let g:WebDevIconsDefaultFileSymbolColor = s:blue " sets the color for files that did not match any rule
+"let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
+"let g:WebDevIconsDefaultFileSymbolColor = s:blue " sets the color for files that did not match any rule
 
 
 """""""""""""""""""
@@ -543,7 +560,7 @@ imap <silent> <F9> <Plug>StopMarkdownPreview
 "Dictionary Setting For WhichKey"
 """""""""""""""""""""""""""""""""
 let g:which_key_map = {
-      \ 'f'     : ['Goyo'                , 'Goyo']                   ,
+      \ 'f'     : ['Fuzzy Finder'                , 'Files']                   ,
       \ 'n'     : ['NERDTree'            , 'NERDTree Toggle']        ,
       \ 'v'     : ['Vifm'                , 'Vifm']                   ,
       \ 'r'     : ['Ranger'              , 'Ranger']                 ,
@@ -564,7 +581,6 @@ let g:which_key_map = {
       \ 'Alt-arrows'       : ['Tab Right Or Left'      , 'Tab Right OR Left']               ,
       \ 'c'     : ['Colors'                            , 'Colors']                          ,
       \ 'b'     : ['Buffers'                           , 'Buffers']                         ,
-      \ 's'     : ['Files'                             , 'Files']                           ,
       \ 'W'     : ['Windows'                           , 'Windows']                         ,
       \ 'H'     : ['History'                           , 'History']                         ,
       \ 'Hc'    : ['CMD History'                       , 'CMD History']                     ,
@@ -585,35 +601,35 @@ let g:which_key_map.8 = 'which_key_ignore'
 let g:which_key_map.9 = 'which_key_ignore'
 let g:which_key_map.0 = 'which_key_ignore'
 
-call which_key#register('<Space>', "g:which_key_map")
+"call which_key#register('<Space>', "g:which_key_map")
 """""""""""""""""""""""""""""""
 "Options For The Startify Menu"
 """""""""""""""""""""""""""""""
- let g:startify_custom_header =
-       \ startify#pad(split(system('figlet -w 100 Wim'), '\n'))
+ "let g:startify_custom_header =
+ "      \ startify#pad(split(system('figlet -w 100 Wim'), '\n'))
 "Incase you are insane and want to open a new tab with Goyo enabled
- autocmd BufEnter *
-       \ if !exists('t:startify_new_tab') && empty(expand('%')) && !exists('t:goyo_master') |
-       \   let t:startify_new_tab = 1 |
-       \   Startify |
-       \ endif
+ "autocmd BufEnter *
+ "      \ if !exists('t:startify_new_tab') && empty(expand('%')) && !exists('t:goyo_master') |
+ "      \   let t:startify_new_tab = 1 |
+ "      \   Startify |
+ "      \ endif
 "Bookmarks. Syntax is clear.add yours
-let g:startify_bookmarks = [ {'I': '~/i3/i3/config'},{'L': '~/.blerc'},{'Z': '~/.zshrc'},{'B': '~/.bashrc'},{'V': '~/.vimrc'}]
-    let g:startify_lists = [
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ { 'type': 'files',     'header': ['   Recent']            },
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ { 'type': 'commands',  'header': ['   Commands']       },
-          \ ]
+"let g:startify_bookmarks = [ {'I': '~/i3/i3/config'},{'L': '~/.blerc'},{'Z': '~/.zshrc'},{'B': '~/.bashrc'},{'V': '~/.vimrc'}]
+"    let g:startify_lists = [
+"          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+"          \ { 'type': 'files',     'header': ['   Recent']            },
+"          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+"          \ { 'type': 'commands',  'header': ['   Commands']       },
+"          \ ]
 "cant tell wtf it does so its commented
 " \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
 
-hi StartifyBracket ctermfg=240
-hi StartifyFile    ctermfg=147
-hi StartifyFooter  ctermfg=240
-hi StartifyHeader  ctermfg=114
-hi StartifyNumber  ctermfg=215
-hi StartifyPath    ctermfg=245
-hi StartifySlash   ctermfg=240
-hi StartifySpecial ctermfg=240
+"hi StartifyBracket ctermfg=240
+"hi StartifyFile    ctermfg=147
+"hi StartifyFooter  ctermfg=240
+"hi StartifyHeader  ctermfg=114
+"hi StartifyNumber  ctermfg=215
+"hi StartifyPath    ctermfg=245
+"hi StartifySlash   ctermfg=240
+"hi StartifySpecial ctermfg=240
 
