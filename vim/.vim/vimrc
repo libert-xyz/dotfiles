@@ -138,7 +138,7 @@ set mouse=a
 """""""""""""
 " Clipboard "
 """""""""""""
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 "Using the clipboard plugin c-p can be used to copy to system clipboard
 "and c-v to paste from system clipboard(works in visual mode) - xsel is a dependency
 "For modern terminals such as konsole-xfce-mate etc... Ctrl Shift V works as
