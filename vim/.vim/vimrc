@@ -389,7 +389,7 @@ augroup end
 " autocmd VimEnter * NERDTree
 
 "start nerdtree and put cursor in empty buffer or file
-autocmd VimEnter * NERDTree | wincmd p
+"autocmd VimEnter * NERDTree | wincmd p
 
 " Start NERDTree when Vim is started without file arguments. 
 " below 2 lines were commented for startify to work
