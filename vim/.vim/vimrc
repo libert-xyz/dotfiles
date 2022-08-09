@@ -175,6 +175,7 @@ set noswapfile
 set autoindent
 set ic
 set incsearch
+set hlsearch
 "set smartcase
 set lazyredraw
 " set noshowmatch
@@ -296,6 +297,9 @@ inoremap jj <esc>
 nnoremap bs i#!/bin/bash<ESC>0
 nnoremap cn iconsole.log<ESC>0
 nmap <leader>w :w!<cr>
+"Highlight, press return to temporarily get out of the highlighted search.
+nnoremap <CR> :nohlsearch<CR><CR>
+
 "nnoremap sh :!chmod +x % && source %
 """""""""""""
 "Spell Check"
