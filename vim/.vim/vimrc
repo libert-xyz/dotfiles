@@ -260,7 +260,10 @@ set noshowmode
 "for airline status bar"
 """"""""""""""""""""""""
 let g:airline_powerline_fonts = 1 
-let g:airline_extensions = []
+"an empty list disables all extensions
+"let g:airline_extensions = []
+"or only load what you want
+let g:airline_extensions = ['branch', 'tabline']
 let g:airline_theme='dark'
 let g:airline#extensions#tabline#enabled = 1
 "refer to https://github.com/vim-airline/vim-airline/wiki/Screenshots for
