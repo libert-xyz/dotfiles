@@ -388,6 +388,9 @@ augroup end
 """"""""""""
 
 "leader cc to comnment and leader cu to uncomment
+"comment in visual mode
+vnoremap <silent> # :s/^/#/<cr>:noh<cr>
+vnoremap <silent> -# :s/^#//<cr>:noh<cr>
 
 """""""""""
 "NERDTree "
