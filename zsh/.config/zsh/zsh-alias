@@ -9,3 +9,4 @@ alias docker="docker -H ssh://remot3@165.227.158.254:22"
 alias docker-compose="docker-compose -H ssh://remot3@165.227.158.254:22"
 
 alias testz="echo test new zshrc"
+alias pybook="cd /Users/libert/Documents/repos/libert-xyz/py-notebooks && jupyter-notebook"
