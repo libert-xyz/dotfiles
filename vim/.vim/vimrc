@@ -94,7 +94,8 @@ set encoding=utf-8
 """"""""""""""
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'junegunn/fzf.vim'
-set runtimepath+=/opt/homebrew/opt/fzf
+"set runtimepath+=/opt/homebrew/opt/fzf
+set rtp+=~/.fzf
 "set runtimepath+=~/dotfiles/submodules/fzf/plugin/fzf.vim
 """"""""""""""
 "Syntax Check"
