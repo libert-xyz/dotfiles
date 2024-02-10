@@ -13,3 +13,10 @@ export CLICOLOR=1
 export LSCOLORS=gxExFxdxcxegedabagacad
 export EDITOR="vim"
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/libert/Documents/keys/tully-test-d151a33b7d22.json"
+
+
+#aws-vault
+export AWS_VAULT_BACKEND="pass"
+export AWS_VAULT_PASS_PREFIX=aws-vault
+export AWS_VAULT_PASS_PASSWORD_STORE_DIR="/Users/libert/.password-store"
+export AWS_SESSION_TOKEN_TTL=30m
