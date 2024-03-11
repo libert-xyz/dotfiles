@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+# List instances and connect start a session using SSM sessions
+
+export AWS_PROFILE=checkmate
+
+case $1 in
+
+  list-staging)
+    aws ec2 describe-instances --region us-west-2 --filters "Name=tag:Environment,Values=staging" "Name=instance-state-name,Values=running" \
+                                                                       --query "Reservations[].Instances[].[InstanceId,Tags[?Key=='Name'].Value[]]" \
+                                                                       --output text | sed '$!N;s/\n/ /'
+    ;;
+
+  list-prod)
+    aws ec2 describe-instances --region us-east-1 --filters "Name=tag:Environment,Values=production" "Name=instance-state-name,Values=running" \
+                                                                       --query "Reservations[].Instances[].[InstanceId,Tags[?Key=='Name'].Value[]]" \
+                                                                       --output text | sed '$!N;s/\n/ /'
+    ;;
+
+  ssh-staging)
+    aws ssm start-session  --target $2 --region us-west-2
+    ;;
+
+  ssh-prod)
+    aws ssm start-session \
+      --target $2 --region us-east-1
+    ;;
+
+  *)
+    echo "Usage: $0 [list-staging | list-prod | ssh-staging <instance-id> | ssh-prod <instance-id>]"
+    exit 1
+    ;;
+esac

@@ -12,6 +12,13 @@ sudo apt install stow
 stow vim bash ctags
 ```
 
+```bash
+stow <packagename> # activates symlink
+stow -n <packagename> # trial runs or simulates symlink generation. Effective for checking for errors
+stow -D <packagename> # delete stowed package
+stow -R <packagename> # restows package
+```
+
 For submodules, perform symlinks relative to where the submodule should be placed (i.e. in `vim/.vim/pack/plugins/start` run `ln -s ../../../../../submodules/submodule`). 
 
 ### Adding submodules
@@ -22,5 +29,13 @@ git submodule add https://github.com/preservim/nerdtree submodules/nerdtree
 
 git submodule update --remote
 
+
+# Scripts
+
+Sysmlink to scripts folder is created manually
+
+```bash
+ln -s $HOME/dotfiles/scripts ~/
+```
 
 

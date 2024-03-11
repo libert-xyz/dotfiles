@@ -2,8 +2,9 @@
 
 HISTSIZE=10000
 SAVEHIST=10000
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/Cellar/lazygit/0.34/bin:/Users/libert/miniconda3/bin:/opt/homebrew/opt/libpq/bin:/Users/libert/bin/google-cloud-sdk/bin
-export PATH=$HOME/bin:$PATH
+#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/Cellar/lazygit/0.34/bin:$HOME/miniconda3/bin:/opt/homebrew/opt/libpq/bin:$HOME/bin/google-cloud-sdk/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/Cellar/lazygit/0.34/bin:$HOME/miniconda3/bin:/opt/homebrew/opt/libpq/bin:$HOME/bin/google-cloud-sdk/bin
+export PATH=$HOME/bin:$HOME/scripts:$PATH
 
 
 # User Configuration
@@ -12,11 +13,11 @@ export PATH=$HOME/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=gxExFxdxcxegedabagacad
 export EDITOR="vim"
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/libert/Documents/keys/tully-test-d151a33b7d22.json"
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/Documents/keys/tully-test-d151a33b7d22.json"
 
 
 #aws-vault
 export AWS_VAULT_BACKEND="pass"
 export AWS_VAULT_PASS_PREFIX=aws-vault
-export AWS_VAULT_PASS_PASSWORD_STORE_DIR="/Users/libert/.password-store"
+export AWS_VAULT_PASS_PASSWORD_STORE_DIR="$HOME/.password-store"
 export AWS_SESSION_TOKEN_TTL=30m
