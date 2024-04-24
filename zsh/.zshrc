@@ -14,6 +14,9 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
+# This fix CTRL-a anf CTRL-e in tmux
+#set -g mode-keys emacs
+#set -g status-keys emacs
 
 ## completions ##
 
@@ -67,10 +70,11 @@ zsh_add_file "plugins/zsh-websearch/web-search.plugin.zsh"
 #bindkey '^?' backward-delete-char # Enable backspace after vicmd
 #bindkey '^h' backward-delete-char
 
+# This fix CTRL-a anf CTRL-e in tmux
+bindkey -e
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-
 
 # Environment variables set everywhere
 export EDITOR="vim"
