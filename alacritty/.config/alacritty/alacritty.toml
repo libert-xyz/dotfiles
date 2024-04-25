@@ -27,6 +27,13 @@ style = "Regular"
 [window]
 decorations = "none"
 
+#[cursor.style]
+#shape = "Underline"
+#blinking = "On"
+
+[mouse]
+hide_when_typing = true
+
 [window.padding]
 x = 7
 y = 0

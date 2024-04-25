@@ -139,18 +139,14 @@ set mouse=a
 """""""""""""
 " Clipboard "
 """""""""""""
-"set clipboard=unnamedplus
-"Using the clipboard plugin c-p can be used to copy to system clipboard
-"and c-v to paste from system clipboard(works in visual mode) - xsel is a dependency
-"For modern terminals such as konsole-xfce-mate etc... Ctrl Shift V works as
-"usual
+" make Vim use the * register (and thus the PRIMARY selection) for all yank,
+" delete, change and put operations.
+set clipboard=unnamed
 
-" The default mapping is cp for copying and cv for pasting, and can be followed by any motion or text object. For instance:
-" cpiw => copy word into system clipboard
-" cpi' => copy inside single quotes to system clipboard
-" cvi' => paste inside single quotes from system clipboard
-" In addition, cP is mapped to copy the current line directly.
-" The sequence cV is mapped to paste the content of system clipboard to the next line.
+" Vim use the + register (and thus the CLIPBOARD selection) for all yank,
+" delete, change and put operations
+" set clipboard=unnamedplus
+
 """"""""""""""
 " Usual Things
 """"""""""""""
