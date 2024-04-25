@@ -1,0 +1,138 @@
+#!/bin/bash
+
+BACKTITLE="Remote connection"
+
+
+#This is the specific Key Combo that we want to trap (In this case, Ctrl+C)
+trap 'aborted' INT
+
+aborted() {
+    clear
+    echo "App aborted."
+    exit 0
+}
+
+userExit() {
+    clear
+    echo "App has closed successfully."
+    exit 1
+}
+
+main() {
+    while true; do
+    mainMenuOptions=(
+    1 "My Servers"
+    2 "Tully Servers"
+    3 "Run Command Literally"
+)
+
+result=$(dialog --clear --title "Main Menu" \
+    --backtitle "$BACKTITLE" \
+    --cancel-label "Exit" \
+    --stdout \
+    --menu "Choose an Option" 0 0 3 "${mainMenuOptions[@]}")
+
+case $? in
+    0)  case $result in
+            1) my_servers ;;
+            2) tully_app ;;
+        esac
+        ;;
+    1) userExit ;;
+esac
+    done
+}
+
+my_servers() {
+    while true; do
+    mainMenuOptions=(
+    1 "mars1@US_VA"
+    2 "bankprofit@US_CA"
+    3 "tullyapp@US_IOWA"
+)
+
+result=$(dialog --clear --title "Main Menu" \
+    --backtitle "$BACKTITLE" \
+    --cancel-label "Exit" \
+    --stdout \
+    --menu "Choose an Option" 0 0 3 "${mainMenuOptions[@]}")
+
+case $? in
+    0)  case $result in
+            1) clear; ssh remot3@3.224.166.222; exit ;;
+            2) clear; ssh remot3@184.72.51.167; exit ;;
+            3) clear; ssh remot3@34.172.125.21; exit ;;
+        esac
+        ;;
+    1) userExit ;;
+esac
+    done
+}
+
+tully_app() {
+    while true; do
+    mainMenuOptions=(
+    1 "Tully-Jenkins"
+    2 "Tully-Dev"
+    3 "Tully-Staging"
+    4 "Tully-Prod1"
+    5 "Tully-Prod2"
+)
+
+result=$(dialog --clear --title "Main Menu" \
+    --backtitle "$BACKTITLE" \
+    --cancel-label "Exit" \
+    --stdout \
+    --menu "Choose an Option" 0 0 3 "${mainMenuOptions[@]}")
+
+case $? in
+    0)  case $result in
+            1) clear; ssh libert@34.123.57.166; exit ;;
+            2) clear; ssh libert@35.225.213.224; exit ;;
+            3) clear; ssh libert@34.67.4.251; exit ;;
+            4) clear; ssh libert@34.66.155.251; exit ;;
+            5) clear; ssh libert@34.136.99.179; exit ;;
+        esac
+        ;;
+    1) userExit ;;
+esac
+    done
+}
+
+main
+
+#menu2() {
+#    clear
+#    dialog --clear \
+#    --backtitle "$BACKTITLE" \
+#    --colors \
+#    --cr-wrap \
+#    --title "My Servers" \
+#    --msgbox "\nThis is to show the \ZbIP Link\ZB command embedded in a message box
+#\n\Z1\Zbroot #\Zn ip link
+#\n$(echo "It works")" 0 0
+#}
+
+#menu3() {
+#    clear
+#    dialog --clear \
+#    --backtitle "$BACKTITLE" \
+#    --colors \
+#    --title "Dummy Menu" \
+#    --msgbox "This just a Dummy Menu" 0 0
+#}
+#
+#menu4() {
+#    clear
+#    if dialog --clear \
+#    --backtitle "$BACKTITLE" \
+#    --colors \
+#    --title "Run IP Link" \
+#    --yesno "Would you like to run IP Link now?" 0 0 ;
+#    then
+#      clear; echo "It works"; exit
+#    else
+#      main
+#    fi
+#}
+
