@@ -31,6 +31,13 @@ decorations = "none"
 #shape = "Underline"
 #blinking = "On"
 
+[cursor.vi_mode_style]
+shape = "Underline"
+blinking = "On"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
 [mouse]
 hide_when_typing = true
 
