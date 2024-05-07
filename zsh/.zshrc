@@ -79,3 +79,5 @@ autoload edit-command-line; zle -N edit-command-line
 # Environment variables set everywhere
 export EDITOR="vim"
 
+# zoxide
+eval "$(zoxide init zsh)"
