@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "backup to ProtonDrive"
+
+
+rsync -a $HOME/Documents/Personal/VaultBrain /System/Volumes/Data/Users/libert/Library/CloudStorage/ProtonDrive-libert.schmidt@pm.me/Obsidian/
+
+
+echo "backup to iCloud"
+
+
+rsync -a $HOME/Documents/Personal/VaultBrain $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/Obsidian/
