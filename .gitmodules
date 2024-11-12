@@ -1,21 +1,18 @@
-[submodule "nerdtree"]
-	path = vim/.vim/pack/plugins/start/nerdtree
-	url = https://github.com/preservim/nerdtree
-[submodule "vim-which-key"]
-	path = vim/.vim/pack/plugins/start/vim-which-key
-	url = https://github.com/liuchengxu/vim-which-key
-[submodule "dracula"]
+[submodule "vim/.vim/pack/themes/start/dracula"]
 	path = vim/.vim/pack/themes/start/dracula
 	url = https://github.com/dracula/vim
-[submodule "vim-airline"]
-	path = vim/.vim/pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "vim-airline-themes"]
+[submodule "vim/.vim/pack/plugins/start/nerdtree"]
+	path = vim/.vim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule "vim/.vim/pack/plugins/start/vim-which-key"]
+	path = vim/.vim/pack/plugins/start/vim-which-key
+	url = https://github.com/liuchengxu/vim-which-key
+[submodule "vim/.vim/pack/plugins/start/vim-airline-themes"]
 	path = vim/.vim/pack/plugins/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "vim-devicons"]
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/.vim/pack/plugins/start/vim-devicons"]
 	path = vim/.vim/pack/plugins/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
-[submodule "fzf"]
+[submodule "vim/.vim/pack/plugins/start/fzf"]
 	path = vim/.vim/pack/plugins/start/fzf
 	url = https://github.com/junegunn/fzf.vim
