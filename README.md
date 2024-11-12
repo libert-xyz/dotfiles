@@ -26,9 +26,10 @@ git submodule add https://github.com/preservim/nerdtree vim/.vim/pack/plugins/st
 
 ### Update submodules
 
+```
 git submodule init
 git submodule update --remote
-
+```
 
 # Scripts
 
