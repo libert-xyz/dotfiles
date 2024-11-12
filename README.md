@@ -19,14 +19,14 @@ stow -D <packagename> # delete stowed package
 stow -R <packagename> # restows package
 ```
 
-For submodules, perform symlinks relative to where the submodule should be placed (i.e. in `vim/.vim/pack/plugins/start` run `ln -s ../../../../../submodules/submodule`). 
 
 ### Adding submodules
 
-git submodule add https://github.com/preservim/nerdtree submodules/nerdtree
+git submodule add https://github.com/preservim/nerdtree vim/.vim/pack/plugins/start/nerdtree
 
 ### Update submodules
 
+git submodule init
 git submodule update --remote
 
 
