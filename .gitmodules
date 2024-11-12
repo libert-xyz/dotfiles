@@ -1,21 +1,21 @@
-[submodule "submodules/nerdtree"]
-	path = submodules/nerdtree
+[submodule "nerdtree"]
+	path = vim/.vim/pack/plugins/star/nerdtree
 	url = https://github.com/preservim/nerdtree
-[submodule "submodules/vim-which-key"]
-	path = submodules/vim-which-key
+[submodule "vim-which-key"]
+	path = vim/.vim/pack/plugins/star/vim-which-key
 	url = https://github.com/liuchengxu/vim-which-key
-[submodule "submodules/dracula"]
-	path = submodules/dracula
+[submodule "dracula"]
+	path = vim/.vim/pack/themes/start
 	url = https://github.com/dracula/vim
-[submodule "submodules/vim-airline"]
-	path = submodules/vim-airline
+[submodule "vim-airline"]
+	path = vim/.vim/pack/plugins/star/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "submodules/vim-airline-themes"]
-	path = submodules/vim-airline-themes
+[submodule "vim-airline-themes"]
+	path = vim/.vim/pack/plugins/star/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "submodules/vim-devicons"]
-	path = submodules/vim-devicons
+[submodule "vim-devicons"]
+	path = vim/.vim/pack/plugins/star/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons
-[submodule "submodules/fzf"]
-	path = submodules/fzf
+[submodule "fzf"]
+	path = vim/.vim/pack/plugins/star/fzf
 	url = https://github.com/junegunn/fzf.vim
