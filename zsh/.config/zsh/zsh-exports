@@ -4,7 +4,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/Cellar/lazygit/0.34/bin:$HOME/miniconda3/bin:/opt/homebrew/opt/libpq/bin:$HOME/bin/google-cloud-sdk/bin
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/Cellar/lazygit/0.34/bin:$HOME/miniconda3/bin:/opt/homebrew/opt/libpq/bin:$HOME/bin/google-cloud-sdk/bin:$HOME/.nix-profile/bin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin
-export PATH=$HOME/bin:$HOME/scripts:$PATH
+export PATH=$HOME/bin:$PATH
 
 
 # User Configuration
@@ -13,7 +13,6 @@ export PATH=$HOME/bin:$HOME/scripts:$PATH
 export CLICOLOR=1
 export LSCOLORS=gxExFxdxcxegedabagacad
 export EDITOR="vim"
-export GOOGLE_APPLICATION_CREDENTIALS="$HOME/Documents/keys/tully-test-d151a33b7d22.json"
 
 
 #aws-vault
