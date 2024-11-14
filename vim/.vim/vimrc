@@ -283,6 +283,7 @@ let g:syntastic_check_on_wq = 0
 "leader key is space
 let mapleader =" "
 map <leader>n :NERDTree <Cr>
+map <leader>f :FZF <Cr>
 map <leader>v :Vi <Cr>
 map <leader>r :Ra <Cr>
 map <leader>t :tabnew file <Cr>
@@ -346,7 +347,7 @@ map <leader>tm :tabmove<Cr>
 
 map <leader>c :Colors<Cr>
 map <leader>b :Buffers<Cr>
-map <leader>f :Files<Cr>
+"map <leader>f :Files<Cr>
 map <leader>W :Windows<Cr>
 map <leader>H :History<Cr>
 map <leader>Hc :History:<Cr>
