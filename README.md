@@ -31,12 +31,3 @@ git submodule init
 git submodule update --remote
 ```
 
-# bin
-
-Sysmlink to the bin folder is created manually
-
-```bash
-ln -s $HOME/dotfiles/scripts ~/
-```
-
-
