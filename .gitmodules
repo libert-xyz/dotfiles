@@ -15,4 +15,4 @@
 	url = https://github.com/ryanoasis/vim-devicons
 [submodule "vim/.vim/pack/plugins/start/fzf"]
 	path = vim/.vim/pack/plugins/start/fzf
-	url = https://github.com/junegunn/fzf.vim
+	url = https://github.com/junegunn/fzf
