@@ -48,7 +48,7 @@ zsh_add_file "zsh-prompt"
 
 ## Fuzzy Search ##
 
--[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## Plugins ##
 
