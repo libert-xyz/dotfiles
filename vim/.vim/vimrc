@@ -8,7 +8,7 @@
 " Sections:
 "    -> General
 "    -> VIM user interface
-"    -> Colors and Fonts
+"    -> Theme Colors and Fonts
 "    -> Files and backups
 "    -> Text, tab and indent related
 "    -> Visual mode related
@@ -110,6 +110,10 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
+" Line number
+set number
+"set relativenumber
+
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
@@ -126,8 +130,13 @@ set foldcolumn=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
+" => Theme, Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set the theme and color scheme
+packadd! dracula
+colorscheme dracula
+
 " Enable syntax highlighting
 syntax enable
 
@@ -138,13 +147,6 @@ set regexpengine=0
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
-
-try
-    colorscheme desert
-catch
-endtry
-
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -204,10 +206,10 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <C-space> ?
+" map <space> /
+" map <C-space> ?
 
-" Disable highlight when <leader><cr> is pressed
+ 
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
