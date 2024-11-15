@@ -15,7 +15,7 @@
 "    -> Moving around, tabs and buffers
 "    -> Status line
 "    -> Editing mappings
-"    -> vimgrep searching and cope displaying
+"    -> Plugins
 "    -> Spell checking
 "    -> Misc
 "    -> Helper functions
@@ -299,6 +299,37 @@ endfun
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Nerd Tree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ let g:NERDTreeWinPos = "right"
+ " show dotfiles
+ let NERDTreeShowHidden=1
+ let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+ let g:NERDTreeWinSize=30
+ map <leader>n :NERDTreeToggle<cr>
+ " map <leader>nb :NERDTreeFromBookmark<Space>
+ " map <leader>nf :NERDTreeFind<cr>
+
+
+
+""""""""""""""""""""""""
+" => Airline status bar"
+"""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+"an empty list disables all extensions
+""let g:airline_extensions = []
+"or only load what you want
+let g:airline_extensions = ['tabline']
+let g:airline_theme='dark'
+"let g:airline#extensions#tabline#enabled = 1
+""refer to https://github.com/vim-airline/vim-airline/wiki/Screenshots for
+"colorschemes Screenshots
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
