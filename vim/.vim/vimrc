@@ -331,6 +331,10 @@ let g:airline_theme='dark'
 ""refer to https://github.com/vim-airline/vim-airline/wiki/Screenshots for
 "colorschemes Screenshots
 
+""""""""""""""""""""""""
+" => Fuzzy Finder"
+"""""""""""""""""""""""""
+ map <leader>f :FZF<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
