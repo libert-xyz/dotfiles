@@ -205,11 +205,8 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-" map <space> /
-" map <C-space> ?
 
- 
+" <CR> carriage return  usually Enter 
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
@@ -315,8 +312,6 @@ endif
  map <leader>n :NERDTreeToggle<cr>
  " map <leader>nb :NERDTreeFromBookmark<Space>
  " map <leader>nf :NERDTreeFind<cr>
-
-
 
 """"""""""""""""""""""""
 " => Airline status bar"
