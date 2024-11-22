@@ -322,7 +322,9 @@ let g:airline_powerline_fonts = 1
 "or only load what you want
 let g:airline_extensions = ['tabline']
 let g:airline_theme='dark'
-"let g:airline#extensions#tabline#enabled = 1
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 ""refer to https://github.com/vim-airline/vim-airline/wiki/Screenshots for
 "colorschemes Screenshots
 
