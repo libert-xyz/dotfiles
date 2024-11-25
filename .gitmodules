@@ -4,9 +4,6 @@
 [submodule "vim/.vim/pack/plugins/start/nerdtree"]
 	path = vim/.vim/pack/plugins/start/nerdtree
 	url = https://github.com/preservim/nerdtree
-[submodule "vim/.vim/pack/plugins/start/vim-which-key"]
-	path = vim/.vim/pack/plugins/start/vim-which-key
-	url = https://github.com/liuchengxu/vim-which-key
 [submodule "vim/.vim/pack/plugins/start/vim-airline-themes"]
 	path = vim/.vim/pack/plugins/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline
