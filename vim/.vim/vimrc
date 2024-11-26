@@ -324,7 +324,7 @@ let g:airline_powerline_fonts = 1
 "an empty list disables all extensions
 ""let g:airline_extensions = []
 "or only load what you want
-let g:airline_extensions = ['tabline']
+let g:airline_extensions = ['tabline','branch']
 let g:airline_theme='dark'
 
 let g:airline#extensions#tabline#enabled = 1
