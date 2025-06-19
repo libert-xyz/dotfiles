@@ -33,10 +33,10 @@ autoload -Uz vcs_info
 
 # vcs_info hook to show '*' if the repo is dirty
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr '*'
-zstyle ':vcs_info:git:*' unstagedstr '*'
-zstyle ':vcs_info:git:*' formats '%F{yellow} %u%a%b%f'
-zstyle ':vcs_info:git:*' actionformats '%F{yellow} %u%a%b|%a%f'
+zstyle ':vcs_info:git:*' stagedstr ' *'
+zstyle ':vcs_info:git:*' unstagedstr ' *'
+zstyle ':vcs_info:git:*' formats '%F{yellow} %b%u%a%f'
+zstyle ':vcs_info:git:*' actionformats '%F{yellow} %b%u%a|%a%f'
 
 precmd() { vcs_info }
 
