@@ -45,3 +45,5 @@ hide_when_typing = true
 x = 7
 y = 0
 
+[env]
+TERM = "xterm-256color"

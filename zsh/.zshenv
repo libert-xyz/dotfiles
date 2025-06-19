@@ -1,3 +1,5 @@
+## Manages PATH
+
 # Remove duplicates
 typeset -U path
 

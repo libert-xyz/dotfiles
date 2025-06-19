@@ -1,5 +1,5 @@
-# Claude Sonnet 4
-# Wed Jun 18 22:01:50 EDT 2025
+# This fix CTRL-a anf CTRL-e in tmux
+bindkey -e
 
 # Basic shell options
 setopt AUTO_CD              # cd into directories by typing their name
@@ -20,15 +20,8 @@ PS1='%n@%m:%~ %# '
 autoload -Uz compinit
 compinit
 
-# Basic aliases
-alias ll='ls -la'
-alias la='ls -A'
-alias l='ls -CF'
-alias grep='grep --color=auto'
-
-# Environment variables
-export EDITOR=vim
-export PAGER=less
+# aliases
+source ~/.zsh_aliases
 
 # Smart completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
