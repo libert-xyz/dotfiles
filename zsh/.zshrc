@@ -50,7 +50,7 @@ function set_prompt() {
     SYMBOL="%F{red}❯%f"
   fi
 
-  PS1="%F{green}%n@%m%f:%F{blue}%~%f${vcs_info_msg_0_} $SYMBOL "
+  PS1="%F{green}%n@home%f:%F{blue}%~%f${vcs_info_msg_0_} $SYMBOL "
 }
 precmd_functions+=(set_prompt)
 
