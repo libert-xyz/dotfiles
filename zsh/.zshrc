@@ -1,84 +1,54 @@
-#!/bin/sh
+# Claude Sonnet 4
+# Wed Jun 18 22:01:50 EDT 2025
 
-export ZDOTDIR=$HOME/.config/zsh
-#export ZDOTDIR=$HOME/dotfiles/zsh/.config/zsh
+# Basic shell options
+setopt AUTO_CD              # cd into directories by typing their name
+setopt CORRECT              # spelling correction for commands
+setopt HIST_IGNORE_DUPS     # ignore duplicate commands in history
+setopt HIST_REDUCE_BLANKS   # remove extra blanks from history
+setopt SHARE_HISTORY        # share history between sessions
+
+# History configuration
 HISTFILE=~/.zsh_history
-setopt appendhistory
+HISTSIZE=10000
+SAVEHIST=10000
 
-# some useful options (man zshoptions)
-setopt autocd extendedglob nomatch menucomplete
-setopt interactive_comments
-#stty stop undef		# Disable ctrl-s to freeze terminal.
-zle_highlight=('paste:none')
+# Basic prompt (customize as needed)
+PS1='%n@%m:%~ %# '
 
-# beeping is annoying
-unsetopt BEEP
-
-# This fix CTRL-a anf CTRL-e in tmux
-#set -g mode-keys emacs
-#set -g status-keys emacs
-
-## completions ##
-
-# TAB COMPLETION:
-
+# Enable completion system
 autoload -Uz compinit
-zstyle ':completion:*' menu select
-#zmodload zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files.
 
-# Required for web_search
-zmodload zsh/langinfo
+# Basic aliases
+alias ll='ls -la'
+alias la='ls -A'
+alias l='ls -CF'
+alias grep='grep --color=auto'
 
-# Colors
-#autoload -Uz colors && colors
+# Environment variables
+export EDITOR=vim
+export PAGER=less
+
+# Smart completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select
+
+# Better history search
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+
+# Directory navigation
+setopt AUTO_PUSHD           # automatically push directories onto stack
+setopt PUSHD_IGNORE_DUPS    # ignore duplicate directories
+
+# Better prompt with git info (requires git)
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' (%b)'
+setopt PROMPT_SUBST
+PS1='%n@%m:%~${vcs_info_msg_0_} %# '
+
+# Load colors
 autoload -U colors && colors
-
-## Functions ##
-
-source "$ZDOTDIR/zsh-functions"
-
-## Normal files to source ##
-
-zsh_add_file "zsh-exports"
-#zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-alias"
-zsh_add_file "zsh-prompt"
-
-## Fuzzy Search ##
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## Plugins ##
-
-zsh_add_file "plugins/zsh-dirhistory/dirhistory.plugin.zsh"
-zsh_add_file "plugins/zsh-websearch/web-search.plugin.zsh"
-#zsh_add_plugin "zsh-users/zsh-autosuggestions"
-#zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-#zsh_add_plugin "zsh-users/zsh-dirhistory"
-
-# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
-# More completions https://github.com/zsh-users/zsh-completions
-
-# Key-bindings
-#bindkey -v
-#bindkey -M viins 'jj' vi-cmd-mode # jj = <esc>
-#bindkey -M vicmd "v" edit-command-line # Press v in command mode to edit in vim
-#bindkey -M vicmd 'k' history-substring-search-up # Search backwards in history
-#bindkey -M vicmd 'j' history-substring-search-down # Search forwards in history
-#bindkey '^?' backward-delete-char # Enable backspace after vicmd
-#bindkey '^h' backward-delete-char
-
-# This fix CTRL-a anf CTRL-e in tmux
-bindkey -e
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-
-# Environment variables set everywhere
-export EDITOR="vim"
-
-# zoxide
-eval "$(zoxide init zsh)"
-
