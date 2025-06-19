@@ -30,11 +30,15 @@ autoload -U colors && colors
 
 # Git info with vcs_info
 autoload -Uz vcs_info
-precmd() { vcs_info }
 
-# Set up vcs_info for git
-zstyle ':vcs_info:git:*' formats '%F{yellow} %b%f'
-zstyle ':vcs_info:git:*' actionformats '%F{yellow} %b|%a%f'
+# vcs_info hook to show '*' if the repo is dirty
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr '*'
+zstyle ':vcs_info:git:*' unstagedstr '*'
+zstyle ':vcs_info:git:*' formats '%F{yellow} %u%a%b%f'
+zstyle ':vcs_info:git:*' actionformats '%F{yellow} %u%a%b|%a%f'
+
+precmd() { vcs_info }
 
 # Prompt function for color and status
 function set_prompt() {
