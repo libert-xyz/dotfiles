@@ -82,5 +82,3 @@ export EDITOR="vim"
 # zoxide
 eval "$(zoxide init zsh)"
 
-# Added by Windsurf
-export PATH="/Users/libert/.codeium/windsurf/bin:$PATH"
