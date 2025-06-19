@@ -33,8 +33,8 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 
 # Set up vcs_info for git
-zstyle ':vcs_info:git:*' formats '%F{yellow} %b%f'
-zstyle ':vcs_info:git:*' actionformats '%F{yellow} %b|%a%f'
+zstyle ':vcs_info:git:*' formats '%F{yellow} %b%f'
+zstyle ':vcs_info:git:*' actionformats '%F{yellow} %b|%a%f'
 
 # Prompt function for color and status
 function set_prompt() {
