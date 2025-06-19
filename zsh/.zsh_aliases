@@ -6,7 +6,7 @@ alias grep='grep --color=auto'
 
 # My aliases
 alias pi="ping 8.8.8.8"
-alias code="/Applications/Zed.app/Contents/MacOS/zed"
+alias code='zed'
 alias repos="cd ~/Documents/repos"
 alias keys="cd ~/Documents/keys"
 alias docs="cd ~/Documents"
