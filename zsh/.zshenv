@@ -12,7 +12,7 @@ if [[ -d '/opt/homebrew/bin' ]]; then
 fi
 
 # User binaries
-path=("$HOME/utils/bin" "$HOME/.local/bin" $path)
+path=("$HOME/utils/bin" "$HOME/.local/bin" "$HOME/.atuin/bin"  $path)
 
 # Development environments
 # [[ -d "$HOME/.cargo/bin" ]] && path=("$HOME/.cargo/bin" $path)
