@@ -8,10 +8,20 @@ setopt HIST_IGNORE_DUPS     # ignore duplicate commands in history
 setopt HIST_REDUCE_BLANKS   # remove extra blanks from history
 setopt SHARE_HISTORY        # share history between sessions
 
+# Directory navigation
+setopt AUTO_PUSHD           # automatically push directories onto stack
+setopt PUSHD_IGNORE_DUPS    # ignore duplicate directories
+
+setopt PROMPT_SUBST
+
 # History configuration
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
+# Better history search
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
 
 # --- Clean, colorful, git-aware prompt ---
 
@@ -40,24 +50,14 @@ function set_prompt() {
 }
 precmd_functions+=(set_prompt)
 
+# aliases
+source ~/.zsh_aliases
+
 # Enable completion system
 autoload -Uz compinit
 compinit
-
-# aliases
-source ~/.zsh_aliases
 
 # Smart completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select
-
-# Better history search
-bindkey '^R' history-incremental-search-backward
-bindkey '^S' history-incremental-search-forward
-
-# Directory navigation
-setopt AUTO_PUSHD           # automatically push directories onto stack
-setopt PUSHD_IGNORE_DUPS    # ignore duplicate directories
-
-setopt PROMPT_SUBST
