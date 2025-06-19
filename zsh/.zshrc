@@ -13,8 +13,32 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-# Basic prompt (customize as needed)
-PS1='%n@%m:%~ %# '
+# --- Clean, colorful, git-aware prompt ---
+
+# Load colors
+autoload -U colors && colors
+
+# Git info with vcs_info
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Set up vcs_info for git
+zstyle ':vcs_info:git:*' formats '%F{yellow} %b%f'
+zstyle ':vcs_info:git:*' actionformats '%F{yellow} %b|%a%f'
+
+# Prompt function for color and status
+function set_prompt() {
+  local EXIT="$?" # Save last command exit status
+  local SYMBOL
+  if [[ $EXIT -eq 0 ]]; then
+    SYMBOL="%F{green}❯%f"
+  else
+    SYMBOL="%F{red}❯%f"
+  fi
+
+  PS1="%F{green}%n@%m%f:%F{blue}%~%f${vcs_info_msg_0_} $SYMBOL "
+}
+precmd_functions+=(set_prompt)
 
 # Enable completion system
 autoload -Uz compinit
@@ -36,12 +60,4 @@ bindkey '^S' history-incremental-search-forward
 setopt AUTO_PUSHD           # automatically push directories onto stack
 setopt PUSHD_IGNORE_DUPS    # ignore duplicate directories
 
-# Better prompt with git info (requires git)
-autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' formats ' (%b)'
 setopt PROMPT_SUBST
-PS1='%n@%m:%~${vcs_info_msg_0_} %# '
-
-# Load colors
-autoload -U colors && colors
