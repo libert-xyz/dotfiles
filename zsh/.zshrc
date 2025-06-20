@@ -65,3 +65,6 @@ compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
