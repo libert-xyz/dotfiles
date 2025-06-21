@@ -68,3 +68,6 @@ zstyle ':completion:*' menu select
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+# zoxide
+eval "$(zoxide init zsh)"
