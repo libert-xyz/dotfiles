@@ -4,7 +4,7 @@
 typeset -U path
 
 # System paths (usually already set, but ensuring order)
-path=('/usr/local/bin' '/usr/bin' '/bin' '/usr/sbin' '/sbin' $path)
+path=('/usr/local/bin' '/usr/bin' '/bin' '/usr/sbin' '/sbin' '/usr/local/go/bin' $path)
 
 # Homebrew (macOS)
 if [[ -d '/opt/homebrew/bin' ]]; then
