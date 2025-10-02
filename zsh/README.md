@@ -336,3 +336,12 @@ For most simple setups, you might not need `.zprofile` at all. You can put most 
 
 Use `.zprofile` when you specifically need login-shell-only behavior or integration with system services that expect login shell environment variables.​​​​​​​​​​​​​​​​
 
+
+## Loading order
+
+### Zsh has multiple startup files:
+
+•   ~/.zshenv → always loaded (even in scripts)
+•   ~/.zprofile → loaded for login shells
+•   ~/.zshrc → loaded for interactive shells
+•   ~/.zlogin → loaded for login shells (after zshrc)
