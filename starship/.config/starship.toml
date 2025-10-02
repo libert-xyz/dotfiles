@@ -1,0 +1,7 @@
+
+# Which is equivalent to
+format = """
+$username\
+$hostname\
+$localip\
+$character"""

@@ -23,37 +23,6 @@ SAVEHIST=10000
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 
-# --- Clean, colorful, git-aware prompt ---
-
-# Load colors
-autoload -U colors && colors
-
-# Git info with vcs_info
-autoload -Uz vcs_info
-
-# vcs_info hook to show '*' if the repo is dirty
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr ' *'
-zstyle ':vcs_info:git:*' unstagedstr ' *'
-zstyle ':vcs_info:git:*' formats '%F{yellow} %b%u%a%f'
-zstyle ':vcs_info:git:*' actionformats '%F{yellow} %b%u%a|%a%f'
-
-precmd() { vcs_info }
-
-# Prompt function for color and status
-function set_prompt() {
-  local EXIT="$?" # Save last command exit status
-  local SYMBOL
-  if [[ $EXIT -eq 0 ]]; then
-    SYMBOL="%F{green}❯%f"
-  else
-    SYMBOL="%F{red}❯%f"
-  fi
-
-  PS1="%F{green}%n@home%f:%F{blue}%~%f${vcs_info_msg_0_} $SYMBOL "
-}
-precmd_functions+=(set_prompt)
-
 # aliases
 source ~/.zsh_aliases
 
@@ -71,3 +40,6 @@ source <(fzf --zsh)
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# starship
+eval "$(starship init zsh)"
