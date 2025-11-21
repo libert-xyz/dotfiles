@@ -3,6 +3,7 @@ $directory\
 $git_branch\
 $git_status\
 $terraform\
+$kubernetes\
 $character"""
 
 #[fill]
@@ -24,3 +25,6 @@ modified = '*'
 staged = '[++\($count\)](green)'
 renamed = 'renamed'
 deleted = 'deleted'
+
+[kubernetes]
+disabled = true
