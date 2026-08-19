@@ -50,3 +50,9 @@ y = 0
 
 [env]
 TERM = "xterm-256color"
+
+#For claude code
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
