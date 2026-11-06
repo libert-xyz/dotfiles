@@ -1,3 +1,7 @@
+# Homebrew: must run here (not only in .zshenv) because /etc/zprofile's
+# path_helper reorders PATH and pushes /opt/homebrew/bin behind /usr/bin.
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+
 # The following lines were added by Docker Desktop to add commands to your PATH.
 export PATH="$PATH:/Users/libert/.docker/bin"
 # End of Docker Desktop section.
