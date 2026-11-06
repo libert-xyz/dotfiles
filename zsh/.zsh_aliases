@@ -7,8 +7,3 @@ alias grep='grep --color=auto'
 # My aliases
 alias pi="ping 8.8.8.8"
 alias code='zed'
-alias keys="cd ~/Documents/keys"
-alias docs="cd ~/Documents"
-alias docker="docker -H ssh://remot3@34.172.125.21:22"
-alias docker-compose="docker-compose -H ssh://remot3@34.172.125.21:22"
-alias postgres_remote="ssh -N -L 5432:localhost:5432 remot3@34.172.125.21"
