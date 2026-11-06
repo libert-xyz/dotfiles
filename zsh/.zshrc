@@ -48,3 +48,6 @@ fpath=(/Users/libert/.docker/completions $fpath)
 autoload -Uz compinit
 (( ${+_comps[docker]} )) || compinit
 # End of Docker CLI completions
+
+# GPG: let pinentry find the terminal (git commit signing)
+export GPG_TTY=$(tty)
