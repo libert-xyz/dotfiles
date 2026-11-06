@@ -27,4 +27,4 @@ renamed = 'renamed'
 deleted = 'deleted'
 
 [kubernetes]
-disabled = true
+disabled = false
