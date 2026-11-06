@@ -43,3 +43,8 @@ eval "$(zoxide init zsh)"
 
 # starship
 eval "$(starship init zsh)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/libert/.docker/completions $fpath)
+autoload -Uz compinit
+(( ${+_comps[docker]} )) || compinit
+# End of Docker CLI completions
